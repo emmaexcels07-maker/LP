@@ -4,4 +4,6 @@ const car = {
     year: 2020,
     color: 'Blue'
 }
-console.log(car);# LP
+console.log(car);
+
+
