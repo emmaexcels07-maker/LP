@@ -33,3 +33,15 @@ welcomeMessage("Alice");
     }   
     console.log(subtraction(10, 4));
 
+function netsalary(grossSalary, loanDeduction) {
+    let netsalary = grossSalary - loanDeduction;
+    if (netsalary < 0) {
+        console.log('You have a debt of ${netsalary}');
+    } else if (netsalary > 0) {
+        console.log('Your net salary is ${netsalary}');
+    }   else {
+        console.log('You have no net salary');
+    }
+    return netsalary;
+}   
+console.log(netsalary(5000, 2000));
