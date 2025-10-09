@@ -15,6 +15,7 @@
 
 // const friuts = ['Apple', 'Banana', 'Orange'];
 // friuts.pop();
+// console.log(friuts);
 
 // const person = {
 //     name: 'Emmanuel Feyisayo',
@@ -91,3 +92,32 @@
 // console.log(positiveNumbers); // Output: [1, 3, 5]
 
 
+// shift() method
+let numbers = [1, 2, 3, 4, 5];
+numbers.shift();
+console.log(numbers);
+
+
+// splice() method
+let fruits = ['Apple', 'Banana', 'Orange', 'Mango'];
+fruits.splice(1, 2);
+console.log(fruits);
+
+// indexof() method
+let colors = ['Red', 'Blue', 'Green', 'Yellow'];
+let index = colors.indexOf('Green');
+console.log(index);
+
+// foreach() method
+let countrys = ['Nigeria', 'Ghana', 'Kenya'];
+countrys.forEach(country => console.log(country));
+
+// join() method
+let words = [ 'l' , 'am' , 'Emmanuel'];
+let sentence = words.join(' ');
+console.log(sentence);
+
+// reverse() method
+let letters = ['A', 'B', 'C', 'D'];
+letters.reverse();
+console.log(letters);
