@@ -12,7 +12,11 @@ function getGrade(score) {
     else return 'F';
 }
 
+
+console.log("Student Grades:")
+
 students.forEach(student => {
+    student.grade = getGrade(student.score);
     console.log(`${student.name} - Score: ${student.score}, Grade: ${student.grade}`);
 });
 
