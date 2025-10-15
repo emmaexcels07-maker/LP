@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/0f1568f34d.js" crossorigin="anonymous"></script>
+    
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-blue-500 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between"> 
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-between">EF</div>
+                <div>
+                    <h1 class="text-lg font-bold">Emmanuel Feyisayo</h1>
+                    <p class="text-sm text-gray-500">Software Engineer</p>
+            </div>
+        </div>
+        <nav class="hidden md:flex gap-6 text-sm">
+            <a href="task.html" class="hover:text-red-900">Home</a>
+            <a href="about.html" class="hover:text-red-900">About</a>
+            <a href="skill.html" class="hover:text-red-900">Skills</a>
+            <a href="project.html" class="hover:text-red-900">Projects</a>
+            <a href="contact.html" class="hover:text-red-900">Contact</a>
+
+            <div class="social" aria-hidden="true">
+          <button title="facebook" class="active"><i class="fa-brands fa-facebook"></i></button>
+          <button title="twitter"><i class="fa-brands fa-x-twitter"></i></button>
+          <button title="instagram"><i class="fa-brands fa-instagram"></i></button>
+        </nav>
+        <button class="md:hidden p-2 rounded-md focus:outline-none">&#9776;</button>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
+        <!-- //HERO SECTION// -->
+        <section id="home" class="flex flex-col-reverse md:flex-row items-center gap-8">
+            <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-10 mt-10">
+                 <div class="md:w-1/2 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-4">Hi, I'm Emmanuel Feyisayo</h2>
+                <p class="text-lg mb-6">A passionate Software Engineer specializing in building exceptional digital experiences.</p>
+                <div class="cta-row" aria-label="Subscribe and connect">
+            <input id="emailInput" class="email" type="email" placeholder="Email address" aria-label="Email address" />
+            <a href="#" class="inline-block mt-6 px-6 py-3 bg-red-500 text-white rounded-lg shadow hover:bg-indigo-700">Contact Me</a>
+          </div>
+                </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                <img src="/software-developer-6521720_640.jpg" alt="Personal Picture" class="w-48 h-48 md:w-80 md:h80 rounded-full border-4 border-blue floating object-cover shadow-sm">
+            </div>
+            </div>
+           
+        </section>
+
+        <!-- //ABOUT SECTION// -->
+         <section id="About" class="mt-10 bg-white rounded-full shadow p-6">
+            <h3 class="text-*1 font-blod">About Me</h3>
+            <p class="mt-2 text-gray-600">I am a dedicated software engineer with a strong background in computer science and a passion for developing innovative solutions. With experience in various programming languages and frameworks, I enjoy tackling complex problems and delivering high-quality software products.</p>
+            <p class="mt-2 text-gray-600">In addition to my technical skills, I am a collaborative team player who values communication and continuous learning. I am always eager to take on new challenges and contribute to the success of the projects I work on.</p>
+         </section>
+
+            <!-- //SKILLS SECTION// -->
+         <section class="bg-primary text-white rounded-lg shadow p-6 mt-10">
+            <h3 class="text-*1 font-blod">Skills</h3>
+            <ul class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <li class="bg-blue-600 rounded-lg p-4 text-center">HTML</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">CSS</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">JavaScript</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">React</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">Node.js</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">Python</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">Django</li>
+                <li class="bg-blue-600 rounded-lg p-4 text-center">SQL</li>
+            </ul>
+
+                        <!--FOOTER SECTION-->
+            <section class="mt-10 bg-blue rounded-lg shadow p-6">
+                <h3 class="text-*1 font-blod">contact</h3>
+                <p class="mt-2 text-gray-600">Feel free to reach out to me via email or connect with me on social media.</p>
+                <a href="mailto:emmaexcels07@gmail.com" class="inline-black mt-6 px-6 py-3 bg-blue text-white rounded-lg shadow hover:bg-indigo-700">Email Me</a>
+
+            </section>
+
+            <footer class="mt-10 text-center text-sm text-gray-500">
+                &copy; 2024 Shadow Empire. All rights reserved.
+            </footer>
+
+    </main>
+    
+</body>
+</html>

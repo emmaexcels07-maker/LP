@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hero - Digital Products & Brands</title>
+
+  <!-- Google fonts (Poppins for big headline, Inter for body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#eef0f6;
+      --card:#ffffff;
+      --muted: #9ba0ad;
+      --text:#0b1120;
+      --accent:#6b33ff; /* strong purple used in image */
+      --accent-2:#5c2cf0;
+      --container-width:1200px;
+      --profile-img: url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0b3b9b70d2bfb4b8e5a1f2a2c6a3f4be'); 
+      /* Replace the above url with your own image path or data URL */
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Page frame */
+    .outer {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 32px;
+      box-sizing:border-box;
+    }
+
+    .card {
+      width:100%;
+      max-width:var(--container-width);
+      background:var(--card);
+      border-radius:6px;
+      box-shadow: 0 20px 40px rgba(18,21,34,0.06);
+      padding:36px 48px;
+      box-sizing:border-box;
+      position:relative;
+      overflow:visible;
+    }
+
+    /* top nav */
+    .nav {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .nav .logo {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo .avatar {
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#fff,#eee);
+      display:inline-block;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      overflow:hidden;
+    }
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:28px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      color:var(--muted);
+      font-weight:500;
+    }
+    .nav ul li { cursor:pointer; }
+    .nav .social {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .nav .social button {
+      background:transparent;
+      border:none;
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      cursor:pointer;
+      color:var(--muted);
+    }
+    .nav .social .active {
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;
+      box-shadow: 0 6px 18px rgba(108,72,255,0.12);
+    }
+
+    /* hero main grid */
+    .hero {
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:36px;
+      align-items:center;
+      padding:22px 8px 36px;
+      position:relative;
+    }
+
+    /* left column */
+    .left {
+      padding-right:8px;
+    }
+
+    .eyebrow {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+    .title {
+      font-family: Poppins, Inter, sans-serif;
+      font-weight:800;
+      font-size:64px;
+      line-height:0.95;
+      margin:0 0 20px 0;
+      letter-spacing:-1px;
+      color:var(--text);
+    }
+    .title .accent {
+      display:inline-block;
+      color:var(--accent);
+      padding-left:6px;
+    }
+    .subtitle {
+      color:var(--muted);
+      font-size:15px;
+      max-width:58ch;
+      margin-bottom:26px;
+    }
+
+    .cta-row {
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .email {
+      background:#fafafa;
+      border:1px solid rgba(12,15,24,0.05);
+      padding:14px 16px;
+      border-radius:6px;
+      width:380px;
+      box-shadow: 0 10px 30px rgba(13,18,30,0.03);
+      font-size:15px;
+      outline:none;
+      transition:box-shadow .18s ease, border-color .18s ease;
+    }
+    .email:focus{
+      border-color: rgba(107,51,255,0.25);
+      box-shadow:0 8px 30px rgba(107,51,255,0.08);
+    }
+
+    .btn {
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;
+      border:none;
+      padding:12px 18px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: 0 10px 25px rgba(91,49,245,0.12);
+      transition:transform .12s ease, box-shadow .12s ease;
+      min-width:150px;
+    }
+    .btn:active{ transform:translateY(1px); }
+    .btn.ghost {
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(107,51,255,0.12);
+      box-shadow:none;
+    }
+
+    /* right column profile area */
+    .right {
+      position:relative;
+      height:420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .profile-frame {
+      width:100%;
+      height:100%;
+      border-radius:10px;
+      position:relative;
+      overflow:visible;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* decorative confetti background (SVG dashes) */
+    .confetti {
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:0.95;
+    }
+
+    .profile {
+      position:relative;
+      width:380px;
+      height:420px;
+      background:linear-gradient(180deg,#fff,#fcfcff);
+      border-radius:12px;
+      overflow:visible;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 18px 40px rgba(14,18,30,0.06);
+    }
+
+    .profile .img {
+      position:absolute;
+      right:-20px;
+      bottom:0;
+      width:460px;
+      height:520px;
+      background-image:var(--profile-img);
+      background-size:cover;
+      background-position:center;
+      border-radius:8px;
+      filter:drop-shadow(0 10px 30px rgba(34,34,50,0.08));
+      clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 74%, 0% 18%);
+    }
+
+    /* small subtle border box showing the hero content area */
+    .card::after{
+      content:'';
+      position:absolute;
+      inset:22px;
+      border-radius:6px;
+      border:1px solid rgba(14,18,30,0.02);
+      pointer-events:none;
+    }
+
+    /* responsiveness */
+    @media (max-width:1100px){
+      .hero { grid-template-columns: 1fr 360px; gap:24px; }
+      .title { font-size:56px; }
+      .profile { width:340px; height:380px; }
+      .profile .img { width:420px; height:480px; right:-10px; }
+      .email { width:290px; }
+    }
+
+    @media (max-width:840px){
+      .hero { grid-template-columns: 1fr; gap:20px; }
+      .nav ul { display:none; }
+      .title { font-size:44px; }
+      .profile { display:none; }
+      .card { padding:24px; }
+      .email { width:100%; }
+      .cta-row { flex-direction:column; align-items:stretch; }
+      .btn { width:100%; min-width:unset; }
+    }
+
+    /* small utility */
+    .small-muted { color:var(--muted); font-size:13px; margin-top:12px; }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="card" role="main" aria-label="Hero section">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="logo">
+          <div class="avatar" title="logo">
+            <!-- small inline avatar graphic -->
+            <svg viewBox="0 0 64 64" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="64" rx="10" fill="#F6F6FB"/>
+              <circle cx="32" cy="26" r="12" fill="#6b33ff"/>
+            </svg>
+          </div>
+        </div>
+
+        <ul>
+          <li>About</li>
+          <li>Works</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+
+        <div class="social" aria-hidden="true">
+          <button title="dribbble" class="active">D</button>
+          <button title="twitter">T</button>
+          <button title="instagram">I</button>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="left">
+          <div class="eyebrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" style="flex:0 0 18px;">
+              <circle cx="12" cy="12" r="10" fill="#F3F4FF"/>
+              <path d="M9 12l2 2 4-4" stroke="#6b33ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>Product Designer & Visual Developer</div>
+          </div>
+
+          <h1 class="title">
+            Building digital<br />
+            products, brands<br />
+            <span class="accent">experience.</span>
+          </h1>
+
+          <p class="subtitle">
+            I specialize in UI/UX Design, Responsive Web Design, and Visual Development. Currently based in San Francisco building meaningful products and delightful interactions.
+          </p>
+
+          <div class="cta-row" aria-label="Subscribe and connect">
+            <input id="emailInput" class="email" type="email" placeholder="Email address" aria-label="Email address" />
+            <button id="connectBtn" class="btn" type="button">Connect With Me</button>
+          </div>
+
+          <div id="status" class="small-muted" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="right" aria-hidden="true">
+          <div class="profile-frame">
+            <!-- decorative confetti SVG -->
+            <svg class="confetti" viewBox="0 0 600 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M40 30l8 16" stroke="#EDEBFF" />
+                <path d="M100 80l6 12" stroke="#F2F2FF" />
+                <path d="M300 20l10 20" stroke="#EDEBFF" />
+                <path d="M420 100l7 14" stroke="#DDE2FF" />
+                <path d="M520 80l6 12" stroke="#D6CCFF" />
+                <path d="M150 200l9 18" stroke="#EDEBFF" />
+                <circle cx="420" cy="50" r="4" fill="#E6E1FF"/>
+                <circle cx="490" cy="210" r="3" fill="#EDEBFF"/>
+                <circle cx="320" cy="120" r="5" fill="#EDEBFF"/>
+                <path d="M80 330l12 4" stroke="#DDD9FF"/>
+                <path d="M200 40l10 4" stroke="#CDBDFF"/>
+              </g>
+            </svg>
+
+            <div class="profile" aria-hidden="true">
+              <!-- profile image uses CSS variable --profile-img, clipped to a shape -->
+              <div class="img" role="img" aria-label="Profile photo"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // Minimal email validation and feedback
+    (function(){
+      const emailEl = document.getElementById('emailInput');
+      const btn = document.getElementById('connectBtn');
+      const status = document.getElementById('status');
+
+      function validEmail(email){
+        // simple, safe regex (not perfect but ok for UI)
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      }
+
+      btn.addEventListener('click', function(){
+        const email = emailEl.value.trim();
+        if(!email){
+          status.textContent = 'Please provide an email address to connect.';
+          return;
+        }
+        if(!validEmail(email)){
+          status.textContent = 'Please enter a valid email address.';
+          return;
+        }
+        // Simulate success — replace with your integration (API call)
+        status.textContent = 'Thanks — I\'ll reach out to ' + email + ' soon!';
+        // optional: clear input
+        // emailEl.value = '';
+      });
+
+      // optional: press Enter to submit
+      emailEl.addEventListener('keydown', function(e){
+        if(e.key === 'Enter') { btn.click(); }
+      });
+    })();
+  </script>
+</body>
+</html>
