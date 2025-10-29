@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bank Account App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">My Bank Account</h2>
+
+    <div class="text-center text-3xl text-green-600 font-semibold mb-4" id="balanceDisplay">
+      $0.00
+    </div>
+
+    <input 
+      type="number" 
+      id="amountInput" 
+      placeholder="Enter amount" 
+      class="w-full px-4 py-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
+
+    <div class="flex justify-between">
+      <button id="depositBtn"
+        class="w-[48%] bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded transition">
+        Deposit
+      </button>
+
+      <button id="withdrawBtn"
+        class="w-[48%] bg-red-500 hover:bg-red-600 text-white font-semibold py-2 rounded transition">
+        Withdraw
+      </button>
+    </div>
+
+    <div id="message" class="text-center mt-4 text-sm font-medium text-red-600"></div>
+  </div>
+
+  <!-- Load main module -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
